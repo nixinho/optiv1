@@ -1058,40 +1058,6 @@ goto menu
 start "File drive" "https://drive.google.com/drive/folders/1yC1-ETTxskRKMxAN5nlCmP0zz3avHn5S?usp=drive_link"
 goto menu
 
-:allf
-echo                                                              Utente: %username%
-cls
-echo.
-echo.
-call :ColorText F  "                                     Developed by nixinho7 e zeki VERSIONE 1.0   (End Tweak done)                  "
-echo.
-call :ColorText 09  "-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-  "
-echo.
-echo.                     
-echo.                                                                                              
-call :ColorText 9 "                                           [ Your pc has been optimized ]                                    "
-echo.
-echo.
-echo.
-echo.
-echo                   I remind you that in case the pc should be worse at the beginning the file created a restore point :)    
-echo.
-echo.
-echo.
-echo.
-call :ColorText 09 "                                           [ Write x to close the file. ]                                    "
-echo.
-echo.
-echo.
-set /p choose="> "
-
-if /i "%choose%"=="x" (goto cl)
-
-
-:cl
-exit
-
-
 :ColorText
 rem echo off
 <nul set /p ".=%DEL%" > "%~2"
