@@ -92,6 +92,12 @@ if /i "%choose%"=="rp" (goto rp)
 if /i "%choose%"=="all" (goto all)
 if /i "%choose%"=="fn" (goto allf)
 
+:rp
+cls
+echo *** Creazione del punto di ripristino ***
+wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "Punto di ripristino automatico", 100, 7
+cls
+goto menu
 
 :B1
 @echo off
@@ -277,15 +283,6 @@ Reg.exe add "HKCU\Control Panel\Desktop" /v "MenuShowDelay" /t REG_SZ /d "0" /f
 Reg.exe add "HKLM\SYSTEM\ControlSet001\Control\PriorityControl" /v ConvertibleSlateMode /t REG_BINARY /d 32 /f
 Reg.exe add "HKLM\SYSTEM\ControlSet001\Control\PriorityControl" /v Win32PrioritySeparation /t REG_BINARY /d 2a /f
 goto menu
-
-
-:rp
-cls
-echo *** Creazione del punto di ripristino ***
-wmic.exe /Namespace:\\root\default Path SystemRestore Call CreateRestorePoint "Punto di ripristino automatico", 100, 7
-cls
-goto menu
-
 
 :B2
 echo *** Optimizing your pc ***
@@ -1057,6 +1054,8 @@ goto menu
 :B9
 start "File drive" "https://drive.google.com/drive/folders/1yC1-ETTxskRKMxAN5nlCmP0zz3avHn5S?usp=drive_link"
 goto menu
+exit
+
 
 :ColorText
 rem echo off
